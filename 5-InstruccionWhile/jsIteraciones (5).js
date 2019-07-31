@@ -1,10 +1,9 @@
 function mostrar()
 {
-
-var sexo = prompt("ingrese f ó m .");
-
-
+    for (var sexo = prompt("ingrese f ó m .") ; sexo != 'm' && sexo != 'f';){
+        sexo = prompt("Error.Reingrese f o m ");
+    }
 
 document.getElementById('Sexo').value=sexo;
 
-}//FIN DE LA FUNCIÓN
+}
