@@ -5,27 +5,25 @@ function mostrar()
 	// declarar variables
 	var max;
 	var min;
-	var respuesta='si';
+	var respuesta= "s";
 	var primera = true;
 
-	while(respuesta!='no')
-	{
-		do{
-			num = prompt("Ingrese el numero");
-			num =parseInt(num);
-		}while(isNaN(num));
-		if (primera == true){
+	
+	do{
+		num = parseInt(prompt("Ingrese el numero"));			
+		while(isNaN(num)){
+			num = parseInt(prompt("Eso no es un numero.Reingrese el numero"));
+		}
+
+		if (primera == true || num > max){
 			max = num;
+		}
+		if (primera == true || num < min){
 			min = num;
 			primera = false;
-		}
-		if (num > max){
-			max = num;
 		}	
-		if (num < min){
-			min = num;
-		}
-	}
+		respuesta = prompt ("Desea ingresar otro numero?");
+	}while(respuesta == "s");
 	document.getElementById("maximo").value = max;
 	document.getElementById("minimo").value = min;
 
