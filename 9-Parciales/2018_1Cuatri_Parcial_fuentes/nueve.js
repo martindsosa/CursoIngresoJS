@@ -39,6 +39,9 @@ function mostrar()
         }else{
             if (peso < masPesado){
                 marcaMasPesado = marca;
+                pesoMax = peso;
+            }else if( peso < pesoMin){
+                pesoMin = peso;
             }
         }
 
@@ -50,6 +53,11 @@ function mostrar()
     }while(respuesta == "s")
     
     promPesos = acumPeso / cont;
-
+    document.write("La cantidad de temperaturas pares " + contPares +"<br>");
+    document.write("La marca del producto mas pesado " + marcaMasPesado +"<br>");
+    document.write("La cantidad de productos que se conservan a menos de cero grado " + contMenosCero +"<br>");
+    document.write("El promedio del peso de todos los productos " + promPesos +"<br>");
+    document.write("El peso maximo " + pesoMax +"<br>");
+    document.write("El peso minimo " + pesoMin +"<br>");
 
 }
